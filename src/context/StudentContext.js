@@ -4,7 +4,7 @@ import React, { createContext, useState } from "react";
 export const StudentContext = createContext();
 
 export const StudentProvider = ({ children }) => {
-  const [students, setStudents] = useState([
+  const [students] = useState([
     { id: 101, name: "Arun Kumar" },
     { id: 102, name: "Priya Sharma" },
     { id: 103, name: "Karthik Raj" },
