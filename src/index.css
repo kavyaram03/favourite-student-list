@@ -1,13 +1,281 @@
-body {
+
+/* ===== Blush Pink & Cream Theme ===== */
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #FFF7F8;
+  color: #49343B;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* ===== Navigation Bar ===== */
+
+.navbar {
+  background-color: #FCE4EC;
+  color: #C2185B;
+  padding: 22px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  box-shadow: 0 3px 15px rgba(194, 24, 91, 0.08);
+  border-bottom: 1px solid #F4A7BB;
+}
+
+.navbar h2 {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  color: #9F174D;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 10px 16px;
+  border-radius: 10px;
+  transition: all 0.25s ease;
+}
+
+.nav-links a:hover {
+  background-color: #FFFFFF;
+  color: #C2185B;
+  box-shadow: 0 3px 10px rgba(194, 24, 91, 0.08);
+}
+
+/* ===== Main Container ===== */
+
+.container {
+  width: 85%;
+  max-width: 900px;
+  margin: 48px auto;
+}
+
+.container h1 {
+  color: #C2185B;
+  font-size: 32px;
+  line-height: 1.3;
+  margin-bottom: 12px;
+  letter-spacing: -0.7px;
+}
+
+.subtitle {
+  color: #856C75;
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+/* ===== Student List ===== */
+
+.student-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.student-card {
+  background-color: #FFFFFF;
+  padding: 23px 25px;
+  border: 1px solid #F7D7E1;
+  border-radius: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  box-shadow: 0 5px 18px rgba(194, 24, 91, 0.045);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.student-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(194, 24, 91, 0.09);
+}
+
+.student-info {
+  min-width: 0;
+}
+
+.student-info h3 {
+  color: #49343B;
+  font-size: 18px;
+  font-weight: 650;
+  margin-bottom: 5px;
+  overflow-wrap: anywhere;
+}
+
+.student-info p {
+  color: #856C75;
+  font-size: 14px;
+}
+
+/* ===== Buttons ===== */
+
+button {
+  font-family: inherit;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 650;
+  line-height: 1.4;
+  transition: background-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+button:focus-visible,
+.nav-links a:focus-visible {
+  outline: 3px solid #C2185B;
+  outline-offset: 3px;
+}
+
+.add-btn {
+  background-color: #C2185B;
+  color: #FFFFFF;
+  box-shadow: 0 4px 10px rgba(194, 24, 91, 0.15);
+}
+
+.add-btn:hover:not(:disabled) {
+  background-color: #A3154D;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(194, 24, 91, 0.2);
+}
+
+.add-btn:disabled {
+  background-color: #F4A7BB;
+  color: #71354A;
+  cursor: not-allowed;
+  box-shadow: none;
+  opacity: 0.9;
+}
+
+.remove-btn {
+  background-color: #FCE4EC;
+  color: #B01850;
+  border: 1px solid #F4A7BB;
+}
+
+.remove-btn:hover {
+  background-color: #F4A7BB;
+  color: #70203D;
+  transform: translateY(-1px);
+}
+
+/* ===== Empty Favourite Message ===== */
+
+.empty-message {
+  background-color: #FFFFFF;
+  padding: 32px 24px;
+  border: 1px dashed #F4A7BB;
+  border-radius: 16px;
+  color: #856C75;
+  text-align: center;
+  font-size: 16px;
+}
+
+/* ===== Responsive Design ===== */
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 20px 5%;
+  }
+
+  .navbar h2 {
+    font-size: 23px;
+  }
+
+  .container {
+    width: 90%;
+    margin: 35px auto;
+  }
+
+  .container h1 {
+    font-size: 28px;
+  }
+
+  .student-card {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+  }
+
+  .nav-links {
+    justify-content: center;
+    gap: 5px;
+  }
+
+  .nav-links a {
+    padding: 9px 11px;
+    font-size: 14px;
+  }
+
+  .container {
+    width: 92%;
+    margin: 28px auto;
+  }
+
+  .container h1 {
+    font-size: 25px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    margin-bottom: 22px;
+  }
+
+  .student-card {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    padding: 19px;
+  }
+
+  .student-info h3 {
+    font-size: 17px;
+  }
+
+  button {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .empty-message {
+    padding: 25px 18px;
+  }
+}
+
+/* ===== Reduced Motion Accessibility ===== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+    animation: none !important;
+  }
 }
